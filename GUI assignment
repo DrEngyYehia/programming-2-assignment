@@ -1,0 +1,75 @@
+import tkinter as tk
+import sys
+
+
+
+def calculate_loan():
+
+    loan_amount = int(loan_entry.get())
+
+
+    years = int(years_var.get())
+
+    if years==1:
+        interest_rate = 0.1376
+
+    elif years==2:
+        interest_rate = 0.1406
+
+    elif years==3:
+        interest_rate = 0.1487
+
+
+    elif years==4:
+        interest_rate = 0.1571
+
+    interest =loan_amount *interest_rate
+    total_loan =loan_amount+interest
+    monthly_payment =total_loan /(years*12)
+
+    result_label.config(text=f"Total Loan: {total_loan}\nMonthly Payment: {monthly_payment}")
+
+def exit_program():
+
+    sys.exit()
+
+root = tk.Tk()
+
+root.title("Bank Misr Plan Your Loan Application ")
+
+job_label = tk.Label(root, text="Enter your job:")
+
+
+job_label.pack()
+
+job_entry = tk.Entry(root)
+
+job_entry.pack()
+
+loan_label = tk.Label(root, text="Enter the amount of loan:")
+loan_label.pack()
+
+loan_entry = tk.Entry(root)
+
+loan_entry.pack()
+
+years_label = tk.Label(root, text="Select the number of years to pay the loan:")
+years_label.pack()
+
+years_var = tk.IntVar()
+years_var.set(1)
+
+for i in range(1, 5):
+
+    tk.Radiobutton(root, text=f"{i} years", variable=years_var, value=i).pack()
+
+calculate_button = tk.Button(root, text="Calculate", command=calculate_loan)
+
+
+calculate_button.pack()
+
+result_label = tk.Label(root, text="")
+result_label.pack()
+
+exit_button = tk.Button(root, text="Exit", command=exit_program)
+exit_button.pack()
