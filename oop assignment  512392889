@@ -1,0 +1,176 @@
+import random
+import sys
+class product :
+    def init(self ,product_ID , name , price , manufacturer , expiration_date , year):
+        self.Supermarket_name="Elyoussef_market"
+        self.__product_ID=product_ID
+        self.name=name
+        self.price=price
+        self.manufacturer=manufacturer
+        self.expiration_date=expiration_date
+        self.year=year
+    def product_detail(self):
+        self.product_ID=product_ID
+        self.name=name
+        self.price=price
+        self.manufacturer=manufacturer
+        self.expiration_date=expiration_date
+        self.year=year
+        print("product_detail : ")
+        print(f"the ID of product :  {self.product_ID} ")
+        print(f"the name of product : {self.name} ")
+        print(f"the price of product : {self.price} ")
+        print(f"the manufacturer of product : {self.manufacturer} ")
+        print(f"the expiration date of product : {self.expiration_date} ")
+        print(f"the year of product : {self.year}")
+
+       # print(self.product_ID, self.name, self.price, self.manufacturer, self.expiration_date, self.year)
+
+
+    def new_product(self):
+        x=print(input("Write the ID of product : "))
+        self.product_ID=x
+        y=print(input("Write the name of product : "))
+        self.name=y
+        z=print(input("Write the price of product : "))
+        self.price=z
+        f=print(input("Write the manufacturer of product : "))
+        self.manufacturer=f
+        v=print(input("Write the expiration date of product : "))
+        self.expiration_date=v
+        n=print(input("Write the year of product : "))
+        self.year=n
+
+    def change_product_ID(self):
+        l=print(input("Write the new prodect_ID : "))
+        self.product_ID=l
+
+    def Info_of_product(self):
+
+      print("""1.Add new product 
+          2.Display product details
+          3.cahnge product_ID
+          4.Exit the system""")
+      while True:
+        try:
+            option=int(input("Enter : 1 ,2 ,3 ,4 : "))
+        except:
+            print("Erorr! Enter : 1 ,2, 3, 4 only!")
+        else:
+            if option == 1:
+                self.new_product()
+            elif option == 2:
+                self.product_detail()
+            elif option == 3:
+                self.change_product_ID()
+            elif option == 4:
+                print("Thank you ! ")
+                sys.exit()
+
+
+class Healthy(product):
+    def init(self, calories, components):
+        self.calories=calories
+        self.components=components
+
+    def new_Healthy_product(self):
+        x = print(input("Write the ID of Healthy product : "))
+        self.product_ID = x
+        y = print(input("Write the name of Healthy product : "))
+        self.name = y
+        z = print(input("Write the price of Healthy product : "))
+        self.price = z
+        f = print(input("Write the manufacturer of Healthy product : "))
+        self.manufacturer = f
+        v = print(input("Write the expiration date of Healthy product : "))
+        self.expiration_date = v
+        n = print(input("Write the year of Healthy product : "))
+        self.year = n
+        p=print(input("Write the calories of Healthy product : "))
+        self.calories=p
+        t=print(input("Write the components of Healthy product : "))
+        self.components=t
+
+    def Healthy_product_detail(self):
+        self.product_ID = product_ID
+        self.name = name
+        self.price = price
+        self.manufacturer = manufacturer
+        self.expiration_date = expiration_date
+        self.year = year
+        self.calories=calories
+        self.components=components
+
+        print(" Healthy_product_detail : ")
+        print("product_detail : ")
+        print(f"the ID of product :  {self.product_ID} ")
+        print(f"the name of product : {self.name} ")
+        print(f"the price of product : {self.price} ")
+        print(f"the manufacturer of product : {self.manufacturer} ")
+        print(f"the expiration date of product : {self.expiration_date} ")
+        print(f"the year of product : {self.year}")
+        print(f"the calories of product : {self.calories} ")
+        print(f"the components of product is : {self.components} ")
+
+        print(self.product_ID, self.name, self.price, self.manufacturer, self.expiration_date, self.year, self.calories, self.components)
+
+    def Info_of_Healthy_product(self):
+        print("""1. Add new Healthy product
+              2. Display Healthy product details
+              3. change calories  
+              4. check calories and components 
+              5.compute total calories of healthy product based on the weight (by gram) 
+              6. Exit the system """)
+        while True:
+            try:
+                option=int(input("Enter : 1, 2, 3, 4, 5, 6 :  "))
+            except:
+                print("Error ! , Enter 1, 2, 3, 4, 5, 6 only !!!!")
+            else:
+                if option==1:
+                    self.new_Healthy_product()
+                elif option==2:
+                    self.Healthy_product_detail()
+                elif option==3:
+                    m=print(input("Enter the new calories : "))
+                    self.calories=m
+                elif option==4:
+                    self.calories=calories
+                    self.components=components
+                    print(f"the calories of product is : {self.calories}")
+                    print(f"the components of product is : {self.components}")
+                elif option==5:
+                    self.calories=calories
+                    c=int(input("Enter the weight = "))
+                    total=c*calories
+                    print(f"the total calories of healthy product based on weight = {total}")
+                elif option==6:
+                    print("Thank you ! ")
+                    sys.exit()
+
+
+print("Welcom to Supermarket Elyoussef ")
+#print("choose 1 for product"
+ #     "choose 2 for healty product")
+product_ID=input("Enter the product ID : ")
+name=input("Enter the name of product : ")
+price=input("Enter the price of product  : ")
+manufacturer=input("Enter the manufacturer of product :  ")
+expiration_date=input("Enter the expiration date : ")
+year=input("Enter the year of product : ")
+calories=int(input("Enter the calories of Healthy product : "))
+components=input("Enter the components of Healthy product : ")
+print("""choose 1 for product  
+      choose 2 for healty product""")
+while True:
+    try:
+        optionn=int(input("Enter 1 or 2 :"))
+    except:
+        print("Enter 1 or 2 only ! :")
+    else:
+        if optionn == 1:
+            obj1 = product()
+            obj1.Info_of_product()
+        elif optionn == 2:
+            obj2=Healthy()
+            obj2.Info_of_Healthy_product()
